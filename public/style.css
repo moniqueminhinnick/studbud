@@ -1,0 +1,704 @@
+body {
+    font-family: Helvetica;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #E8F0F6;
+}
+
+/*Subjects*/
+h1 {
+    margin-bottom: 30px;
+
+}
+#qone.questions {
+    display: flex;
+    flex-direction: row;
+
+}
+#taskColumns h2 {
+    margin: 30px;
+}
+#subjects-container {
+    background-color: white;
+    padding-left: 22%;
+    margin: 1%;
+    margin-bottom:3%;
+}
+
+.subject-card {
+    width:280px;
+}
+
+#addSubject {
+    display: block;
+    border-width: 1px;
+    border-color: black;
+    width:200px;
+    height:60px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px
+}
+#inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#nextq {
+    width: 20px;
+    height: 25px !important;
+    background-color: #04B15E;
+    margin-left: 10px;
+    font-weight: bold;
+}
+input#aone {
+    margin: 0px 10px;
+}
+#subject-form {
+    display: none;
+    margin:20px 0px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px lightgray;
+    width: 550px;
+    height:auto;
+    justify-content: center;
+    flex-direction: column;
+    background-color:black;
+    color: white;
+    padding: 0px 20px 20px 20px;
+}
+
+#qtwo {
+    display: none;
+    flex-direction: column;
+}
+.subjectName {
+    margin: 0px 10px 0px 140px;
+}
+#qcontainer {
+    display: flex;
+    flex-direction: row;
+
+}
+.subjectCards {
+
+    width:200px;
+    height: 50px;
+    border-radius: 15px;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    justify-content: center;
+    padding-top:15px;
+    margin: 20px 20px 20px 0px;
+}
+#saveSubjectsNamesButton {
+    background-color:#04B15E;
+    color: white;
+    width: 200px;
+    height: 28px;
+    border-radius: 5px;
+    margin-left: 280px;
+}
+input {
+    text-transform: uppercase;
+
+}
+#inputs {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+.subjectName {
+   margin-bottom: 20px;
+}
+#addSubject:hover {
+    color:#04B15E;
+    box-shadow: 1px 2px 4px lightgray;
+    cursor: pointer;
+
+}
+
+#nextq {
+    background-color:#04B15E;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+#subjects-cards {
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+
+}
+
+/* subject marks */
+#subjectMarks {
+    display: none;
+    height: 200px;
+}
+#total {
+    flex-direction: column;
+    display: flex;
+    width: 20%;
+    background-color: #04B15E;
+    border-radius: 0px 15px 15px 0px;
+    text-align: center;
+    padding: 20px;
+
+}
+.amarks {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 10px;
+    padding-top: 10px
+}
+#markscontainer {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color:white;
+    border-radius: 15px;
+    height: 100px;
+    margin-left: 23%;
+
+}
+#goalMarks > label {
+    font-weight: bold;
+
+    text-align: center;
+}
+
+#goalMarks > select {
+    margin-top: 10px;
+    width: 170px ! important;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin-left: 12px;
+}
+#goalMarks {
+    width: 20%;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    display: flex;
+    border-radius: 14px 0px 0px 14px;
+}
+input.marks {
+    background-color: black;
+    color: white;
+    width: 50px;
+}
+/* kanban board */
+#kanbanBoard {
+    background-color: #E8F0F6; 
+    padding: 50px 50px 50px 20%;
+    padding-left: 23%;
+    height: 100%;
+}
+
+
+#tasklist {
+    justify-content: center;
+    width:100%;
+    margin-top: 50px;
+    border-color: black;
+    border-width: 1px;
+}
+
+
+#taskForm {
+    display: none;
+    position: fixed;
+    width: 40%;
+    height: 400px;
+    box-shadow: 5px 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+    z-index :9;
+    position: absolute;
+
+}
+
+
+#taskForm h2 {
+    margin: 0px 0px 20px 0px;;
+}
+
+input , select{
+    border-radius: 5px;
+    background-color: #E8F0F6;
+    float:right;
+    width:200px !important;
+    text-align: center;
+    height:25px !important;
+    padding: 2px 10px;
+    border: 0px;
+    font-family: Helvetica;
+}
+#tLHeader {
+    display: flex;
+    padding: 20px 20px 20px 0px;
+    justify-content: space-between;
+}
+
+#taskButton {
+    float: right;
+    background-color: #04B15E;
+    color: white;
+    border: 1px;
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+}
+select {
+    width: 220px;
+    padding: 2px 10px;
+    height: 30px;
+}
+
+#taskColumns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     
+
+}
+
+#taskColumns h2 {
+    color:black;
+}
+
+.column_items {
+    flex: 1;
+}
+
+.dropzone {
+    height: 10px;
+    transition: background 0.15s, height 0.15s;
+}
+
+.dropzone_active {
+    height: 20px;
+    background-color: #04B15E;
+}
+
+#addTask {
+    background-color: white;
+    color:#04B15E;
+    border:none;
+    border-radius:5px;
+    padding: 15px;
+    margin: 20px 0px;
+}
+
+.card {
+    display: flex;
+    width: 260px;
+    height: 280px;
+    border-radius: 5px;
+    background-color:#E8F0F6;
+    padding: 10px 0px;
+    flex-direction: column;
+    margin:30px 30px 30px 0px;
+    box-shadow: 1px 2px 4px lightgray;
+
+}
+.card div {
+    padding: 5px;
+    margin:10px;
+    padding:5px;
+    text-align: center;
+    flex-direction: column;
+    justify-items: stretch;
+
+
+}
+
+.descrip {
+    text-align: left !important;
+    font-weight: bold;
+}
+
+.estimatedT {
+    border-radius: 5px;
+    background-color:#EFF0C7;
+
+}
+.priority {
+    border-radius: 5px;
+
+}
+#High {
+    background-color: #D1B1B1
+}
+
+#Medium {
+    background-color: #F2D4B2;
+}
+
+#Low {
+    background-color: #B1D1CA;
+
+    
+}
+    
+.duedate {
+    
+    background-color: #E8F0F6;
+    border-radius: 5px;
+}
+
+#todo, #doing, #done {
+    width: 280px;
+}
+#todoList {
+    padding: 0px !important;
+}
+.deltask {
+    width:120px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    border-color: black;
+    background-color: white;
+    border-width: 1px;
+}
+
+.deltask:hover {
+    background-color: black;
+    color: white;
+}
+#close {
+    height: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: black;
+    width: 30px;
+    padding:0px;
+}
+#close:hover {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* Side Navigation */
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 10; 
+    top: 30; 
+    left: 40;
+    background-color: white;
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+    box-shadow: 1px 2px 4px lightgray;
+  }
+#navSubjects {
+    list-style: none;
+    padding-left: 60px;
+   color: #B1D1CA;
+   text-transform: uppercase;
+
+}
+
+#navSubjects li:hover {
+   color: black;
+   cursor: pointer;
+
+}
+.toolNav {
+      background-color: #E8F0F6;
+      border-radius: 15px;
+      box-shadow: 1px 2px 4px lightgray;
+      margin:20px;
+      height: 30px;
+      justify-content: center;
+      text-align: center;
+      padding: 4px;
+      font-weight: 200;
+      font-size: small;
+}
+
+  #top-sec {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+  }
+
+  .sidenav h4, .sidenav h2 {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    margin: 0px;
+   
+  }
+  h4 {
+      font-weight: 200;
+      
+  }
+  .sidenav h2 {
+      margin: 0px;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+.draggable.dragging {
+    background-color: #B1D1CA !important;
+}
+.container {
+    width: 350px;
+    height: auto;
+    background-color:white;
+    border-radius: 15px;
+    padding-left:20px;
+    
+}
+
+/* Pomodor Timer */
+
+.pomodoro-timer {
+    display: none;
+    height: 208px;
+    width: 220 !important;
+    margin: 10px;
+    padding: 4px;
+    background-color: #181818;
+    color: white;
+    border-radius: 15px;
+    
+}
+#js-progress {
+    width: inherit;
+    border-radius: 15px 15px 0px 0px;
+}
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  progress {
+    width: 230px !important;
+    height: 12px;
+    position: absolute;
+    top: 367px;
+    left: 10px;
+    z-index: 99;
+    background-color: #04B15E;
+    justify-content: center;
+    border-radius: 15px 15px 0px 0px;
+    z-index: 999;
+}
+  
+  
+  progress::-webkit-progress-bar {
+   background-color: rgba(0, 0, 0, 0.1);;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: #fff;
+  }
+  
+  .timer {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    left: 21px;
+    width: 210px;
+    margin: 10px 0px;
+  }
+  
+  .clock {
+    margin-top: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color:#04B15E;
+
+  }
+  
+  .mode-button {
+    font-size: 16px;
+    height: 28px;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 300;
+    color: white;
+    border: 1px solid transparent;
+    margin: 0px;
+    border-radius: 15px;
+    padding: 2px 12px;
+    background: none;
+  }
+  
+  .mode-button.active {
+        color: white;
+        background-color: black;
+        border-color: white;
+  }
+  
+  .main-button {
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+    text-transform: uppercase;
+    color:black;
+    font-weight: bold;
+    width: 80%;
+    background-color:#E8F0F6;
+    border-width: initial;
+    border-style: none;
+    padding: 0px 12px;
+    border-radius: 10px;
+    transition: color 0.5s ease-in-out 0s;
+    margin-top: 10px;
+  }
+  
+  .main-button:hover {
+      background-color: #04B15E;
+      color: white;
+
+  }
+  button:focus, button:active {
+    outline: none;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .clock {
+      font-size: 2rem;
+    }
+  }
+
+
+
+
+
+  /* SPOTIFY MUSIC PLAYER */  
+ 
+
+.spotify-embeds {
+    display: none;
+    width: 100%;
+    padding: 10px;  
+    
+    border-radius: 5px;
+  }
+  
+
+iframe {
+    display: block;
+    transition: opacity 0.125s;
+    border-radius: 10px;
+}
+
+
+/* STOPWATCH TIMER */
+.stopwatch {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.sw-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 232px;
+    background-color: #181818;
+    border: 2px solid;
+    border-radius: 15px;
+    color:white;
+    
+  }
+  
+  .time {
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
+  }
+  
+  
+  .controls {
+    display: flex;
+    justify-content:space-around;
+    width: 120px;
+  }
+  
+  button {
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+  }
+  
+  #playButton {
+    display: block;
+    width:40px;
+    height:40px;
+  }
+  
+  #pauseButton {
+    display: none;
+    width:40px;
+    height:40px;
+  }
+
+  #resetButton {
+    display: block;
+    width:46px;
+    height:47px;
+  }
