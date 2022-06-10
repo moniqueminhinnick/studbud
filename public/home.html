@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>StudBud</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/subjects.js" defer></script>
+    <script src="js/music.js" defer></script>
+    <script src="js/pomodoro-timer.js" defer></script>
+    <script src="js/stopwatch.js" defer></script>
+    <script src="js/kanbanBoard.js" defer></script>
+    <script src="js/dictionary.js" defer></script>
+  </head>
+
+  <body>
+
+   
+    <!-- SUBJECTS CONTAINER-->  
+    <div id="subjects-container">
+      <h1> 🏠 Home </h1>
+      <div id="subjects-List">
+        <h2>Subjects</h2>
+        <div id="subjects-cards"></div>
+        <button type="submit" id="addSubject" onclick=addSubjectBtn()>+ Add Subjects</button>
+
+        <!-- form to add subjects -->
+        <form id="subject-form"><br>
+          <div class="questions" id="qone">
+            <label for="subjectNum">Number of Subjects</label>
+            <input type="number" name="subjectNum" id="aone" min="1" max="6" required>
+            <button type="submit" id="nextq" onclick=displayNext()>next</button>
+          </div>
+          <div class="questions" id="qtwo">
+            <div id="qcontainer">
+              <label for="subjectName" id="subjN" >Subject Codes</label>
+              <div id="inputs">
+              </div>
+            </div>
+              <button type="button" id="saveSubjectsNamesButton" onclick=saveSubjectNames()>Save Subjects</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- subject marks display -->
+      <div id="subjectMarks"> 
+        <div id="markscontainer">
+          <div id="goalMarks">
+            <label for="goal"> Goal Mark</label>
+            <select name="goal" id="">
+              <option value="pass">P : 50%-65%</option>
+              <option value="credit">C : 65%-75%</option>
+              <option value="distinction">D : 75%-85% </option>
+              <option value="highDistinction">HD : 85%-100%</option>
+            </select>
+          </div>
+
+          <div class="amarks">
+            <!--a1-->
+            <div id="a1">
+              <h2>A1</h2>
+              <div id="a1Mark"> 
+                <input  class="marks" type="number" id="a1M" max="100"> </input>
+              </div>
+            </div>
+
+            <!--a2-->
+            <div id="a2">
+              <h2>A2</h2>
+              <div id="a2Mark"> 
+                <input  class="marks" type="number" id="a2M" max="100"> </input>
+              </div>
+
+            </div>
+            <!--a3-->
+            <div id="a3">
+              <h2>A3</h2>
+              <div id="a3Mark"> 
+                <input  class="marks" type="number" id="a3M" max="100"> </input>
+              </div>
+
+            </div>
+            <!--a4-->
+            <div id="a4">
+              <h2>A4</h2>
+              <div id="a4Mark"> 
+                <input  class="marks" type="number" id="a4M" max="100"> </input>
+              </div>
+            </div>
+
+
+          </div>
+          <div id="total">
+            <h2> Total %</h2>
+            <span id="goalTotal"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+     <!-- SIDE NAVIGATION -->
+      <!-- hamburger menu -->
+     <span onclick="openNav()"><img src="Resources/hamburger.png" width="40px" height="40px"> </span>
+     <div id="mySidenav" class="sidenav">
+
+      <div id="top-sec">
+        <a class="closebtn" onclick="closeNav()"><img src="Resources/left-arrow.png"width="40px" height="40px"></a>
+        <h2>STUDBUD</h2>
+      </div>
+
+      <div id="uni-nav">
+        <h4>Subjects</h4>
+        <ul id="navSubjects">
+        </ul>
+      </div>
+     
+      
+      <div class="toolsNav">
+        <p class="toolNav" id="dictionaryBtn" onclick="openCloseDictionary()"> 📚   Dictionary</p>
+        <p class="toolNav" id="musicPlayerBtn" onclick="openCloseMusicPlayer()"> 🎶   Music Player</p>
+        <p class="toolNav" id="pomodoroBtn" onclick="openClosePomodoroTimer()"> ⏰   Promodo Timer</p>
+        <p class="toolNav" id="stopwatchTimer" onclick="openCloseStopwatch()"> ⏱️   Stopwatch Timer</p>
+         
+        <!-- dictionary -->
+        <div id="dictionary">
+          <div id="dictionary-definition">
+            <input id="dictionary-word" type="text">
+            <button type="button" id="dictSearch" onclick="handleDictionarySearch()">Search</button>
+            <div id="dictionary-result"></div>
+          </div>
+        </div>
+
+
+        <!-- pomodoro timer -->
+        <div class="pomodoro-timer">
+          
+          <div class="progress-bar"><progress id="js-progress" value="0"></progress></div>
+          <div class="timer">
+            <div class="button-group mode-buttons" id="js-mode-buttons">
+              <button
+                data-mode="pomodoro"
+                class="button active mode-button"
+                id="js-pomodoro">
+                Pomodoro
+              </button>
+
+              <button
+                data-mode="shortBreak"
+                class="button mode-button"
+                id="js-short-break">
+                Short break
+              </button>
+
+              <button
+                data-mode="longBreak"
+                class="button mode-button"
+                id="js-long-break"
+              >
+                Long break
+              </button>
+            
+            </div>
+
+            <!--  clock to display time -->
+            <div class="clock" id="js-clock">
+              <span id="js-minutes">25</span>
+            <span class="separator">:</span>
+            <span id="js-seconds">00</span>
+          </div>
+            <!--  start and stop button >  uses action to control display-->
+           <button class="main-button" data-action="start" id="js-btn">
+            Start
+           </button>
+          </div>
+            <!--  sounds attached to buttons -->
+          <div class="hidden">
+             <audio src="resources/music/backtowork.mp3" data-sound="pomodoro"></audio>
+             <audio src="resources/music/break.mp3" data-sound="shortBreak"></audio>
+             <audio src="resources/music/break.mp3" data-sound="longBreak"></audio>
+           </div>
+
+      </div>  
+
+       <!-- music player -->
+       <div class="spotify-embeds">
+        <div class="spotify-embed">
+          <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?theme=0" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+      </div>
+
+      <!-- stopwatch timer -->
+      <div class="stopwatch">
+        <div class="sw-container">
+          <span class="time" id="display">00:00:00</span>
+        </div>
+  
+        <div class="controls">
+          <button class="buttonPlay">
+            <img id="playButton" width="50px"src="resources/play-button.png" />
+  
+            <img id="pauseButton" width="50px" src="resources/pause.png" />
+          </button>
+  
+          <button class="buttonReset">
+            <img id="resetButton" width="50px" src="resources/stop-button.png"/>
+        </div>
+        </div>
+      </div>
+      </div>
+
+  
+
+    <!-- KANBAN BOARD-->
+    <div id="kanbanBoard" class="page-container">
+      <h1> Kanban Board</h1>
+      <p id="emptyList">You have not added any tasks yet.</p>
+      <button id="addTask" class="openButton" type="button"> + Add Task</button>
+
+    
+    <!-- task form which pops up when user wants to add card-->
+    <div id="taskForm" class="page-container">
+      <div id="tLHeader">
+        <h2>Add Task</h2>
+        <button id="close">
+          X
+        </button>
+      </div>
+            <div id="task-grid">
+                <form id="taskform">
+                    <label for="task">Task </label>
+                    <input type="text" name="task" id="taskInput" required>
+
+                    <!-- Date input --> <br><br>
+                    <label for="dueDate">Due Date  </label>
+                    <input type="date" name="dueDate" id="dueDateInput">
+
+                    <!-- Time input --> <br> <br>
+                    <label for="completionTime">Completion Time  </label>
+                    <input type="time" name="completionTime" id="completionTimeInput">
+                    <br><br>
+                    <label for="estimatedTime">
+                    Time to Complete </label>
+                    <input type="number" name="estimatedTime" id="estimatedTimeInput">
+
+
+                    <!-- priority --> <br><br>
+                    <label for="priority">Task Priority </label>
+                    <select name="prority" id="priorityInput">
+                        <option value="">Select one</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+
+                    <br><br>
+
+                    <button id="taskButton" type="submit">Submit</button>
+                </form>
+            </div>
+           
+    </div>
+    <!-- containers for list-->
+    <div id="tasklist">
+      <div id="taskColumns">
+
+        <div id="todo" class="container" >
+          <h2>To Do</h2>
+          <ul id="todoList"></ul>
+        </div>
+
+        <div id="doing" class="container" >
+         <h2>Doing</h2>
+         <ul id="doingList" ></ul>
+        </div>
+
+        <div id="done" class="container">
+          <h2>Done</h2>
+          <ul id="doneList"></ul>
+        </div>
+      </div>  
+   </div>
+  </div>
+</div>
+ </body>
+  
+</html>

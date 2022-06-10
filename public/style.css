@@ -5,7 +5,7 @@ body {
     background-color: #E8F0F6;
 }
 
-/*Subjects*/
+/* Subject s*/
 h1 {
     margin-bottom: 30px;
 
@@ -20,9 +20,11 @@ h1 {
 }
 #subjects-container {
     background-color: white;
+    height: 450px !important;
     padding-left: 22%;
-    margin: 1%;
     margin-bottom:3%;
+    padding-bottom: 1rem;
+    padding-top: 55px;
 }
 
 .subject-card {
@@ -171,13 +173,39 @@ input {
     color:white;
     border-radius: 15px;
     height: 100px;
-    margin-left: 23%;
+   
 
+}
+#a1 > h2 {
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+#a2 > h2 {
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+#a3 > h2 {
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+#a4  > h2 {
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 #goalMarks > label {
     font-weight: bold;
 
     text-align: center;
+}
+input.marks {
+    width: 70px !important;
+    height: 30px;
+    background-color: darkslategrey !important;
+    font-weight: bold;
+}
+
+.mark > p {
+    justify-content: right;
 }
 
 #goalMarks > select {
@@ -201,6 +229,7 @@ input.marks {
     background-color: black;
     color: white;
     width: 50px;
+    text-align: center;
 }
 /* kanban board */
 #kanbanBoard {
@@ -209,7 +238,6 @@ input.marks {
     padding-left: 23%;
     height: 100%;
 }
-
 
 #tasklist {
     justify-content: center;
@@ -235,7 +263,6 @@ input.marks {
 
 }
 
-
 #taskForm h2 {
     margin: 0px 0px 20px 0px;;
 }
@@ -251,6 +278,7 @@ input , select{
     border: 0px;
     font-family: Helvetica;
 }
+
 #tLHeader {
     display: flex;
     padding: 20px 20px 20px 0px;
@@ -266,6 +294,7 @@ input , select{
     width: 220px;
     height: 30px;
 }
+
 select {
     width: 220px;
     padding: 2px 10px;
@@ -276,8 +305,6 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-     
-
 }
 
 #taskColumns h2 {
@@ -309,7 +336,7 @@ select {
 
 .card {
     display: flex;
-    width: 260px;
+    width: 240px;
     height: 280px;
     border-radius: 5px;
     background-color:#E8F0F6;
@@ -374,7 +401,7 @@ select {
     width:120px;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0px 0px 60px;
     border-color: black;
     background-color: white;
     border-width: 1px;
@@ -404,9 +431,9 @@ select {
 .sidenav {
     height: 100%; 
     width: 0; 
-    position: fixed; 
+    position:fixed; 
     z-index: 10; 
-    top: 30; 
+    top: 0 !important; 
     left: 40;
     background-color: white;
     overflow-x: hidden; 
@@ -419,7 +446,6 @@ select {
     padding-left: 60px;
    color: #B1D1CA;
    text-transform: uppercase;
-
 }
 
 #navSubjects li:hover {
@@ -453,11 +479,9 @@ select {
     display: block;
     transition: 0.3s;
     margin: 0px;
-   
   }
   h4 {
       font-weight: 200;
-      
   }
   .sidenav h2 {
       margin: 0px;
@@ -494,8 +518,59 @@ select {
     padding-left:20px;
     
 }
+/* Dictionary */ 
+#dictionary-result {
+    text-align:start;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+    font-size: x-small;
+}
 
-/* Pomodor Timer */
+input#dictionary-word {
+    background-color: black;
+    border: 1px dotted white;
+    color: white;
+    width: 140px !important;
+    justify-content: flex-start;
+    margin-right:17px !important;
+    
+}
+
+#dictionary {
+    background-color: black;
+    width: 220px;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    display: none;
+    flex-direction: row;
+    margin-left: 15px;
+    border-radius: 15px;
+}
+
+#dictSearch {
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    width: 80%;
+    background-color: #E8F0F6;
+    border-width: initial;
+    border-style: none;
+    padding: 0px 12px;
+    border-radius: 10px;
+    transition: color 0.5s ease-in-out 0s;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#dictSearch:hover {
+    background-color: #04B15E;
+    color: white;
+}
+
+/* Pomodoro Timer */
 
 .pomodoro-timer {
     display: none;
@@ -520,19 +595,12 @@ select {
   }
   
   progress {
-    width: 230px !important;
     height: 12px;
-    position: absolute;
-    top: 367px;
-    left: 10px;
-    z-index: 99;
     background-color: #04B15E;
     justify-content: center;
-    border-radius: 15px 15px 0px 0px;
-    z-index: 999;
+    left:10;
+    top: 350;
 }
-  
-  
   progress::-webkit-progress-bar {
    background-color: rgba(0, 0, 0, 0.1);;
   }
@@ -624,14 +692,11 @@ select {
 
 
 
-  /* SPOTIFY MUSIC PLAYER */  
- 
-
+  /* Spotify Music Player */  
 .spotify-embeds {
     display: none;
     width: 100%;
     padding: 10px;  
-    
     border-radius: 5px;
   }
   
@@ -643,7 +708,7 @@ iframe {
 }
 
 
-/* STOPWATCH TIMER */
+/* Stopwatch Timer */
 .stopwatch {
     display: none;
     justify-content: center;

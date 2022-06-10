@@ -1,0 +1,27 @@
+{
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moniqueminhinnick/studbud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moniqueminhinnick/studbud/issues"
+  },
+  "homepage": "https://github.com/moniqueminhinnick/studbud#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "sortablejs": "^1.15.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  }
+}
